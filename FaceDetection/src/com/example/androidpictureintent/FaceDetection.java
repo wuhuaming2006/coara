@@ -26,7 +26,7 @@ import com.example.jjilexampleandroid.Gray8DetectHaarMultiScale;
 public class FaceDetection implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-	boolean enableCache = false;
+	boolean enableCache = false; 
 	boolean onlyLast = false;
 	
     public List<Bitmap> findFacesBitmap(List<Bitmap> bitmap, int minScale, int maxScale, String message) {
