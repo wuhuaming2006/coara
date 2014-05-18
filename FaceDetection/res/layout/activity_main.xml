@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    	xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	     >
+
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent" >
+
+			<Button
+			    android:id="@+id/go_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:contentDescription="go"
+			    android:text="Go" />
+
+			<Button
+			    android:id="@+id/exit_button"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:contentDescription="exit"
+			    android:text="Exit" />
+
+			<Button
+			    android:id="@+id/clear"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:contentDescription="clear"
+			    android:text="Clear" />
+
+		</LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="317dp"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+	        <Button
+	            android:id="@+id/disable_cache"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="disableCache"
+	            android:text="Disable Cache" />
+
+	        <Button
+	            android:id="@+id/enable_cache"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="enableCache"
+	            android:text="Enable Cache" />
+
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent" >
+
+	        <Button
+	            android:id="@+id/enable_offloading"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="enableOffloading"
+	            android:text="Enable Offloading"
+	            android:textSize="12sp" />
+
+	        <Button
+	            android:id="@+id/disable_offloading"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="disableOffloading"
+	            android:text="Disable Offloading"
+	            android:textSize="12sp" />
+
+	    </LinearLayout>
+	    
+	        <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent" >
+
+	        <Button
+	            android:id="@+id/enable_oneOfTen"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="enableOneOfTen"
+	            android:text="Enable 1/10"
+	            android:textSize="12sp" />
+
+	        <Button
+	            android:id="@+id/disable_oneOfTen"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:contentDescription="disableOneOfTen"
+	            android:text="Disable 1/10"
+	            android:textSize="12sp" />
+
+	    </LinearLayout>
+
+	     <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:contentDescription="enableOffloading"
+	            android:text="Offloading Type:" />
+
+	        <Spinner
+	            android:id="@+id/offloadingType"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="3"
+	            android:contentDescription="offloadingType"
+	            android:drawSelectorOnTop="true"
+	            android:entries="@array/offloading_types" />
+
+	    </LinearLayout>
+	    <TextView
+	        android:id="@+id/cache_enabled"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Cache Enabled"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	    <TextView
+	        android:id="@+id/offloading_status"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Offloading Enabled"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	    <TextView
+	        android:id="@+id/status"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="status"
+	        android:text="Ready" />
+	    
+	    <TextView
+	        android:id="@+id/oneOfTen_status"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="oneOfTen"
+	        android:text="1/10 Disabled" />
+
+	   
+	    <!--
+		<CheckBox
+		    android:id="@+id/checkBoxSkipCamera"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="Skip Camera" />
+	    -->
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	   
+
+	    <CheckBox
+	        android:id="@+id/image0CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image0"
+	        android:text="0" />
+
+	    <CheckBox
+	        android:id="@+id/image1CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image1"
+	        android:text="1" />
+
+	    <CheckBox
+	        android:id="@+id/image2CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image2"
+	        android:text="2" />
+
+	    <CheckBox
+	        android:id="@+id/image3CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image3"
+	        android:text="3" />
+
+	    <CheckBox
+	        android:id="@+id/image4CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image4"
+	        android:text="4" />
+	    
+	   </LinearLayout> 
+	        <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	   
+	    
+	     <CheckBox
+	        android:id="@+id/image5CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image5"
+	        android:text="5" />
+
+	    <CheckBox
+	        android:id="@+id/image6CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image6"
+	        android:text="6" />
+
+	    <CheckBox
+	        android:id="@+id/image7CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image7"
+	        android:text="7" />
+
+	    <CheckBox
+	        android:id="@+id/image8CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image8"
+	        android:text="8" />
+
+	    <CheckBox
+	        android:id="@+id/image9CheckBox"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="image9"
+	        android:text="9" />
+	    
+	     </LinearLayout>
+
+	    <ImageView
+	        android:id="@+id/imageView0"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+	    
+	    
+	    <ImageView
+	        android:id="@+id/imageView5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView6"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView7"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView8"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+
+	    <ImageView
+	        android:id="@+id/imageView9"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/ic_action_search" />
+	    
+	    
+	    
+	</LinearLayout>
+
+</ScrollView>

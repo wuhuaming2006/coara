@@ -1,0 +1,23 @@
+<project name="MyProject" default="build-jar" basedir=".">
+	<description>
+		Create COARA jar file and copy to projects
+	</description>
+
+	<target name="build-jar">
+		<mkdir dir="res/raw"/>
+		<jar jarfile="res/raw/classes.jar" basedir="bin/classes" />
+		
+		<!-- we can include certain files with the *exclude* ant feature -->
+		<!-- <jar jarfile="res/raw/classes.jar" basedir="bin/classes" excludes="**/FaceDetection.class"/> -->
+		
+		
+		<!-- We can wrap other jars in our jar.  For example take the wrappers out of the server jar and 
+		put them in the libs folder -->
+		
+		<!--  <jar destfile="res/raw/classes.jar"
+        	basedir="bin/classes" > 
+        	<zipgroupfileset dir="libs" includes="**/*.jar"  
+            	excludes="android-support-v4.jar,common.jar,lipermi.jar,log4j-over-slf4j-1.6.6.jar,slf4j-android-1.6.1-RC1.jar,aspectjrt.jar"/> 
+   		 </jar>  -->
+	</target>
+</project>
