@@ -11,13 +11,14 @@
 	
 	<property name="out-classes-location"  location="${dist}/dex"/>
 	
-	<property name="aspectJLib"  location="/Applications/aspectj1.7/lib"/>
 	<!--  install from: http://www.eclipse.org/aspectj/downloads.php -->
+	<property name="aspectJLib"  location="/Applications/aspectj1.7/lib"/>
+	
 	<property name="liper"  location="../Lipermi"/>
-	<property name="pi"  location="../CoaraPiClientAndroid"/>
-	<property name="0xbench"  location="../org.zeroxlab.zeroxbenchmark.Benchmark"/>
-	<property name="chess"  location="../New Chess"/>
-	<property name="androidPictureIntent"  location="../androidPictureIntent"/>
+	<property name="pi"  location="../Pi"/>
+	<property name="0xbench"  location="../0xbench"/>
+	<property name="chess"  location="../Chess"/>
+	<property name="androidPictureIntent"  location="../FaceDetection"/>
 	<property name="jjil-core"  location="../jjil-core"/>
 	
 	<taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
@@ -74,7 +75,7 @@
 		<copy file="${dist}/coara.jar" todir="${pi}/libs"/>
 		<copy file="${dist}/coara.jar" todir="${0xbench}/libs"/>
 		<copy file="${dist}/coara.jar" todir="${chess}/libs"/>
-		<copy file="${dist}/coara.jar" todir="${androidPictureIntent}/libs"/>
+		<copy file="${dist}/coara.jar" todir="${FaceDetection}/libs"/>
 		<copy file="${dist}/coara.jar" todir="${jjil-core}/lib"/>
 	</target>
   
