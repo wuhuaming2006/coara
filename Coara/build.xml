@@ -18,7 +18,7 @@
 	<property name="pi"  location="../Pi"/>
 	<property name="0xbench"  location="../0xbench"/>
 	<property name="chess"  location="../Chess"/>
-	<property name="androidPictureIntent"  location="../FaceDetection"/>
+	<property name="FaceDetection"  location="../FaceDetection"/>
 	<property name="jjil-core"  location="../jjil-core"/>
 	
 	<taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
