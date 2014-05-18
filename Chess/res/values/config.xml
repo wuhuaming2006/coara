@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Chess  -->
+<!-- lime19 - 132.68.206.209
+	 pomela1 - 132.68.206.55
+	 pomela2 - 132.68.206.56 
+	 tethering - 192.168.43.16
+-->
+<resources>
+    <string name="server_ip">132.68.206.209</string>
+    <integer name="server_port">1234</integer>
+    <string-array name="static_classes">
+    </string-array>
+    <string-array name="class_proxies">
+    </string-array>
+	<bool name="cache_enabled">false</bool>
+	<bool name="network_profiler_enabled">false</bool>
+	<bool name ="proxy_enabled">true</bool>	
+	<string name="proxy_server_ip">127.0.0.1</string>
+	<integer name = "proxy_server_port">1984</integer> 
+</resources>
+ 
