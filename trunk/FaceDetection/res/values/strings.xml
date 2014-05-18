@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FaceDetection</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Face Detection</string>
+   	<string-array name="offloading_types">
+		<item>Eager</item>
+		<item>Lazy</item>
+		<item>Pipelined</item>
+	</string-array>
+</resources>

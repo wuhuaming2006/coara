@@ -1,0 +1,22 @@
+
+<aspectj>
+	<aspects>
+		<!-- declare two existing aspects to the weaver -->
+		<!-- <aspect name="com.MyAspect"/> <aspect name="com.MyAspect.Inner"/> -->
+		<!-- define a concrete aspect inline -->
+		<concrete-aspect name="coara.aspects.OffloadingAspectImpl"
+			extends="coara.aspects.OffloadingAspect">
+			<pointcut name="executeRemotableConfigurable"
+  expression="execution (* com.example.androidpictureintent.FaceDetection.findFacesRgbImage(..))" />
+		</concrete-aspect>
+
+		<!-- Of the set of aspects declared to the weaver use aspects matching 
+			the type pattern "com..*" for weaving. -->
+		<include within="coara..*" />
+	</aspects>
+	<weaver options="-verbose">
+		<!-- Weave types that are within the javax.* or org.aspectj.* packages. 
+			Also weave all types in the foo package that do not have the @NoWeave annotation. -->
+		<include within="com.*" />
+	</weaver>
+</aspectj>
