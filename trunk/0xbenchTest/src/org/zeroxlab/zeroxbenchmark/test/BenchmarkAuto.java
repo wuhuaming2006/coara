@@ -31,10 +31,7 @@ public class BenchmarkAuto extends UiAutomatorTestCase {
 		iterations = new UiObject(new UiSelector().description("iterations").instance(0));
 
 		getUiDevice().pressHome();
-		// oxbenchmark
-
-//		sleep(500);
-		getUiDevice().click(650, 461);
+		launchApp("0xBenchmark");
 		// math
 		sleep(500);
 		getUiDevice().click(365, 195);
@@ -80,4 +77,37 @@ public class BenchmarkAuto extends UiAutomatorTestCase {
 		iterations.setText(iteration + "");
 		getUiDevice().pressBack();
 	}
+	
+	protected static void launchApp(String nameOfAppToLaunch) throws UiObjectNotFoundException {
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
+          // Set the swiping mode to horizontal (the default is vertical)
+          appViews.setAsHorizontalList();
+          appViews.scrollToBeginning(10);  // Otherwise the Apps may be on a later page of apps.
+          int maxSearchSwipes = appViews.getMaxSearchSwipes();
+
+          UiSelector selector;
+          selector = new UiSelector().className(android.widget.TextView.class.getName());
+          
+          UiObject appToLaunch;
+          
+          // The following loop is to workaround a bug in Android 4.2.2 which
+          // fails to scroll more than once into view.
+          for (int i = 0; i < maxSearchSwipes; i++) {
+
+              try {
+                  appToLaunch = appViews.getChildByText(selector, nameOfAppToLaunch);
+                  if (appToLaunch != null) {
+                      // Create a UiSelector to find the Settings app and simulate      
+                      // a user click to launch the app.
+                      appToLaunch.clickAndWaitForNewWindow();
+                      break;
+                  }
+              } catch (UiObjectNotFoundException e) {
+                  System.out.println("Did not find match for " + e.getLocalizedMessage());
+              }
+
+                  appViews.scrollForward();
+                  System.out.println("scrolling forward 1 page of apps.");
+          }
+    }
 }
