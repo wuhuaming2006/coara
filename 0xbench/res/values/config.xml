@@ -18,5 +18,4 @@
 	<bool name ="proxy_enabled">false</bool>	
 	<string name="proxy_server_ip">127.0.0.1</string>
 	<integer name = "proxy_server_port">1984</integer>
-	
 </resources>
