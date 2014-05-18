@@ -1,0 +1,60 @@
+<project name="Lipermi" default="copy-jar" basedir=".">
+	<description>
+		Create COARA jar file and copy to projects
+	</description>
+	<!-- set global properties for this build -->
+	<property name="src" location="src"/>
+	<property name="lib" location="lib"/>
+	<property name="bin" location="bin"/>
+	<property name="dist"  location="dist"/>
+	<property name="aspectJLib"  location="/Applications/aspectj1.7/lib"/>
+	<property name="Coara"  location="../Coara"/>
+	<property name="FaceDetection"  location="../FaceDetection"/>
+	
+	<taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+		<classpath>
+			<pathelement location="${aspectJLib}/aspectjtools.jar"/>
+		</classpath>
+	</taskdef>
+
+	<target name="init" depends="clean">
+	  <tstamp/>
+		<mkdir dir="${bin}"/>
+	</target>
+  
+	
+	<target name="compile" depends="init">
+		<iajc source="1.5" target ="1.5"
+	          debug="true" extdirs="" 
+	          destdir="${bin}"
+	          verbose="yes"
+	          classpath="${aspectJLib}/aspectjrt.jar"
+	          fork="no"
+			  aspectpath="${lib}/coara.jar">
+	      <src path="${src}" />
+	      <classpath>
+	          <pathelement location="${aspectJLib}/aspectjrt.jar"/>
+	          <fileset dir="${lib}">
+	              <include name="*.jar" /> 
+	          </fileset>
+	      </classpath>
+		</iajc>
+	</target>
+  
+	<target name="build-jar" depends="compile">
+		<mkdir dir="${dist}"/>
+		<jar jarfile="${dist}/JJILCore.jar" basedir="${bin}"/>
+	</target>
+
+	<!-- //TODO: this only copies the jar, need to force it to rebuild as well.  Maybe call project build files? -->
+	<target name="copy-jar" depends="build-jar">
+		<copy file="${dist}/JJILCore.jar" todir="${Coara}/lib"/>
+		<copy file="${dist}/JJILCore.jar" todir="${FaceDetection}/libs"/>
+	</target>
+  
+  <target name="clean"
+        description="clean up" >
+    <delete dir="${bin}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>
