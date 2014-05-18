@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Benchmark" default="help">
+
+    	<target name="build-jar">
+		<mkdir dir="res/raw"/>
+		<jar jarfile="res/raw/classes.jar" basedir="bin/classes"/>
+	</target>
+
+</project>
